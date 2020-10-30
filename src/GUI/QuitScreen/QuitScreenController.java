@@ -21,7 +21,7 @@ public class QuitScreenController {
 
         Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
         window.setScene(welcomeScene);
-        window.setTitle("Connect to server");
+        window.setTitle("Connect to game server");
         window.show();
     }
 
