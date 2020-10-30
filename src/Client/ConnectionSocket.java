@@ -18,4 +18,16 @@ public class ConnectionSocket {
         this.socket = new Socket(this.ip, this.port);
         System.out.printf("\nConnected to %s server on port %d\n", this.socket.getLocalSocketAddress().toString(), this.socket.getLocalPort());
     }
+
+    public Socket getSocket() {
+        return socket;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public int getPort() {
+        return port;
+    }
 }
