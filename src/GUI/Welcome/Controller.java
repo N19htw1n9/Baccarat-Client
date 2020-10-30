@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Welcome;
 
 import Client.ConnectionSocket;
 import javafx.event.ActionEvent;
