@@ -2,9 +2,10 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Welcome.Controller">
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <children>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: Crimson;" text="Quit" textFill="WHITE">
          <font>
@@ -16,8 +17,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Pane layoutX="14.0" layoutY="200.0" prefHeight="200.0" prefWidth="771.0" />
-      <Pane layoutX="14.0" layoutY="400.0" prefHeight="200.0" prefWidth="567.0" />
+      <Pane layoutX="15.0" layoutY="117.0" prefHeight="200.0" prefWidth="771.0" />
       <Pane layoutX="144.0" layoutY="46.0" prefHeight="71.0" prefWidth="512.0">
          <children>
             <Label layoutX="213.0" layoutY="17.0" text="Banker">
@@ -25,7 +25,7 @@
                   <Font name="System Bold" size="26.0" />
                </font></Label>
          </children></Pane>
-      <Pane layoutX="144.0" layoutY="640.0" prefHeight="71.0" prefWidth="512.0">
+      <Pane layoutX="144.0" layoutY="515.0" prefHeight="71.0" prefWidth="512.0">
          <children>
             <Label layoutX="213.0" layoutY="17.0" text="Player">
                <font>
@@ -34,5 +34,33 @@
             </Label>
          </children>
       </Pane>
+      <Pane layoutX="15.0" layoutY="317.0" prefHeight="200.0" prefWidth="771.0" />
+      <Pane layoutX="15.0" layoutY="607.0" prefHeight="179.0" prefWidth="791.0">
+         <children>
+            <Label layoutX="14.0" layoutY="51.0" prefWidth="139.0" text="Winnings: ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="playerBidText" layoutX="14.0" layoutY="93.0" onKeyTyped="#MouseClickActionPB" onMouseClicked="#MouseClickActionPB" onMouseExited="#MouseExitActionPB" onMouseReleased="#MouseExitActionPB" prefHeight="38.0" prefWidth="241.0" style="-fx-text-fill: gray;" text="Player Bid">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font></TextField>
+            <Button layoutX="583.0" layoutY="86.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: yellowgreen;" text="Start" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <ToggleButton fx:id="bankerToggleButton" layoutX="298.0" layoutY="93.0" mnemonicParsing="false" onAction="#toggleButton" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: orange;" text="Banker" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></ToggleButton>
+            <ToggleButton fx:id="playerToggleButton" layoutX="418.0" layoutY="93.0" mnemonicParsing="false" onAction="#toggleButton" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: orange;" text="Player" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </ToggleButton>
+         </children></Pane>
+      <Line endX="800.0" endY="626.0" startX="-5.7220458984375E-6" startY="626.0" strokeWidth="2.0" />
+      <Line endX="800.0" endY="311.0" layoutX="10.0" layoutY="7.0" startX="-10.000005722045898" startY="311.0" stroke="GOLDENROD" strokeWidth="4.0" />
    </children>
 </AnchorPane>
