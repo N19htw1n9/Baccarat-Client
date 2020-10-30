@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -22,9 +21,9 @@ public class Controller {
     @FXML private TextField playerBidText;
     @FXML private ToggleButton playerToggleButton;
     @FXML private ToggleButton bankerToggleButton;
-    @FXML private AnchorPane anchor;
 
-    private ToggleGroup group;
+    protected ToggleGroup group;
+    protected ConnectionSocket connection;
 
 
     public void MouseClickActionIP() {
@@ -81,7 +80,7 @@ public class Controller {
 
         try {
             int portNumber = Integer.parseInt(portNumberText.getText());
-            ConnectionSocket connection = new ConnectionSocket(ipAddress, portNumber);
+            connection = new ConnectionSocket(ipAddress, portNumber);
 
             Parent gameScreen = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
             Scene gameScene = new Scene(gameScreen);
@@ -113,6 +112,5 @@ public class Controller {
             bankerToggleButton.setStyle("-fx-background-color: orange");
             playerToggleButton.setStyle("-fx-background-color: orange");
         }
-
     }
 }
