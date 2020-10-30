@@ -11,11 +11,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("WelcomeScreen.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Connect to game server");
         primaryStage.setScene(new Scene(root, 450, 500));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
