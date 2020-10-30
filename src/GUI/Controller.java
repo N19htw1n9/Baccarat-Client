@@ -5,9 +5,5 @@ import Client.ConnectionSocket;
 
 public class Controller {
     protected ToggleGroup group;
-    protected ConnectionSocket connection;
-
-    public void setConnection(ConnectionSocket connection) {
-        this.connection = connection;
-    }
+    protected static ConnectionSocket connection;
 }

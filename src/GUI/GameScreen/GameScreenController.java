@@ -19,7 +19,7 @@ public class GameScreenController extends Controller {
         playerBidText.setFont(Font.font("System", FontWeight.NORMAL, 16));
 
         try {
-            System.out.println(connection.getPort());
+            System.out.println(this.connection.getPort());
         } catch (Exception e) {
             System.out.println("This print shouldn't be showing...");
         }

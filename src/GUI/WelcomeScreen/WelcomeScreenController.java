@@ -64,8 +64,7 @@ public class WelcomeScreenController extends Controller {
             return;
         }
 
-        connection = new ConnectionSocket(ipAddress, portNumber);
-        setConnection(connection);
+        this.connection = new ConnectionSocket(ipAddress, portNumber);
 
         Parent gameScreen = FXMLLoader.load(getClass().getResource("../GameScreen/GameScreen.fxml"));
         Scene gameScene = new Scene(gameScreen);
