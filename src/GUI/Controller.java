@@ -1,5 +1,6 @@
 package GUI;
 
+import Client.ConnectionSocket;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -54,8 +55,7 @@ public class Controller {
 
         try {
             int portNumber = Integer.parseInt(portNumberText.getText());
-
-            System.out.printf("IP Address: %s\nPort number: %d\n\n", ipAddress, portNumber);
+            ConnectionSocket connection = new ConnectionSocket(ipAddress, portNumber);
         } catch (Exception err) {
             System.out.println("Port number should be an integer");
         }
