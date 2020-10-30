@@ -69,8 +69,9 @@ public class WelcomeScreenController extends Controller {
         Parent gameScreen = FXMLLoader.load(getClass().getResource("../GameScreen/GameScreen.fxml"));
         Scene gameScene = new Scene(gameScreen);
 
-        Stage gameScreenWindow = (Stage) ((Node)e.getSource()).getScene().getWindow();
-        gameScreenWindow.setScene(gameScene);
-        gameScreenWindow.show();
+        Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        window.setScene(gameScene);
+        window.setTitle("Play game");
+        window.show();
     }
 }
