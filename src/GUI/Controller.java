@@ -2,13 +2,19 @@ package GUI;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import Client.ConnectionSocket;
+import javafx.stage.Stage;
 
 public class Controller
 {
@@ -17,6 +23,7 @@ public class Controller
     @FXML private TextField playerBidText;
     @FXML private ToggleButton playerToggleButton;
     @FXML private ToggleButton bankerToggleButton;
+    @FXML private AnchorPane anchor;
 
     private ToggleGroup group;
 
@@ -85,6 +92,13 @@ public class Controller
         try {
             int portNumber = Integer.parseInt(portNumberText.getText());
             ConnectionSocket connection = new ConnectionSocket(ipAddress, portNumber);
+
+            Parent gameScreen = FXMLLoader.load(getClass().getResource("GameScreen.fxml"));
+            Scene gameScene = new Scene(gameScreen);
+
+            Stage gameScreenWindow = (Stage) ((Node)e.getSource()).getScene().getWindow();
+            gameScreenWindow.setScene(gameScene);
+            gameScreenWindow.show();
         } catch (Exception err) {
             System.out.println("Port number should be an integer");
         }
