@@ -1,18 +1,28 @@
 package GUI.GameScreen;
 
 import GUI.Controller;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class GameScreenController extends Controller {
     @FXML private TextField playerBidText;
     @FXML private ToggleButton playerToggleButton;
     @FXML private ToggleButton bankerToggleButton;
+    @FXML private Button quitButton;
 
     public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
@@ -55,5 +65,15 @@ public class GameScreenController extends Controller {
             bankerToggleButton.setStyle("-fx-background-color: orange");
             playerToggleButton.setStyle("-fx-background-color: orange");
         }
+    }
+
+    public void quitButtonAction(Event e) throws IOException {
+        Parent quitScreen = FXMLLoader.load(getClass().getResource("../QuitScreen/QuitScreen.fxml"));
+        Scene quitScene = new Scene(quitScreen);
+
+        Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        window.setScene(quitScene);
+        window.setTitle("Quit game");
+        window.show();
     }
 }
