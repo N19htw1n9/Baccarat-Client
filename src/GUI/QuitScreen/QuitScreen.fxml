@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller"> <!--DEFINE THE FX CONTROLLER BEFORE RUNNING-->
+<AnchorPane prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.QuitScreen.QuitScreenController"> <!--DEFINE THE FX CONTROLLER BEFORE RUNNING-->
     <children>
-        <Button layoutX="132.0" layoutY="203.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="187.0" style="-fx-background-color: yellowgreen;" text="Play again" textFill="WHITE">
+        <Button fx:id="playAgainButton" layoutX="132.0" layoutY="203.0" mnemonicParsing="false" onAction="#playAgainButtonAction" prefHeight="47.0" prefWidth="187.0" style="-fx-background-color: yellowgreen;" text="Play again" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -16,7 +16,7 @@
                 <Font name="System Bold" size="26.0" />
             </font>
         </Label>
-      <Button layoutX="132.0" layoutY="263.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="187.0" style="-fx-background-color: Crimson;" text="Exit game" textFill="WHITE">
+      <Button fx:id="exitButton" layoutX="132.0" layoutY="263.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="47.0" prefWidth="187.0" style="-fx-background-color: Crimson;" text="Exit game" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
