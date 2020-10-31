@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.WelcomeScreen.WelcomeScreenController"> <!--DEFINE THE FX CONTROLLER BEFORE RUNNING-->
     <children>
-        <Button fx:id="ConnectButton" alignment="CENTER" layoutX="32.0" layoutY="217.0" mnemonicParsing="false" onAction="#ConnectButtonAction" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: dodgerblue;" text="Connect" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="ConnectButton" alignment="CENTER" layoutX="32.0" layoutY="217.0" mnemonicParsing="false" onAction="#connectButtonAction" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: dodgerblue;" text="Connect" textAlignment="CENTER" textFill="WHITE">
             <opaqueInsets>
                 <Insets />
             </opaqueInsets>
@@ -15,11 +15,11 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <TextField fx:id="portNumberText" layoutX="32.0" layoutY="174.0" onKeyTyped="#MouseClickActionPN" onMouseClicked="#MouseClickActionPN" onMouseExited="#MouseExitActionPN" onMouseReleased="#MouseExitActionPN" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="Port Number">
+        <TextField fx:id="portNumberText" layoutX="32.0" layoutY="174.0" onKeyTyped="#mouseClickActionPN" onMouseClicked="#mouseClickActionPN" onMouseExited="#mouseExitActionPN" onMouseReleased="#mouseExitActionPN" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="Port Number">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></TextField>
-        <TextField fx:id="ipAddressText" layoutX="32.0" layoutY="136.0" onKeyTyped="#MouseClickActionIP" onMouseClicked="#MouseClickActionIP" onMouseExited="#MouseExitActionIP" onMouseReleased="#MouseExitActionIP" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="IP Address">
+        <TextField fx:id="ipAddressText" layoutX="32.0" layoutY="136.0" onKeyTyped="#mouseClickActionIP" onMouseClicked="#mouseClickActionIP" onMouseExited="#mouseExitActionIP" onMouseReleased="#mouseExitActionIP" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="IP Address">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></TextField>

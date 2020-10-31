@@ -20,7 +20,7 @@ public class WelcomeScreenController extends Controller {
     @FXML private TextField portNumberText;
     @FXML private TextField ipAddressText;
 
-    public void MouseClickActionIP() {
+    public void mouseClickActionIP() {
         ipAddressText.setStyle("-fx-text-fill: black");
         ipAddressText.setFont(Font.font("System", FontWeight.NORMAL, 12));
 
@@ -28,7 +28,7 @@ public class WelcomeScreenController extends Controller {
             ipAddressText.setText("");
     }
 
-    public void MouseExitActionIP() {
+    public void mouseExitActionIP() {
         if ((ipAddressText.getText()).equals("")) {
             ipAddressText.setText("IP Address");
             ipAddressText.setStyle("-fx-text-fill: gray");
@@ -36,7 +36,7 @@ public class WelcomeScreenController extends Controller {
         }
     }
 
-    public void MouseClickActionPN() {
+    public void mouseClickActionPN() {
         portNumberText.setStyle("-fx-text-fill: black");
         portNumberText.setFont(Font.font("System", FontWeight.NORMAL, 12));
 
@@ -44,7 +44,7 @@ public class WelcomeScreenController extends Controller {
             portNumberText.setText("");
     }
 
-    public void MouseExitActionPN() {
+    public void mouseExitActionPN() {
         if ((portNumberText.getText()).equals("")) {
             portNumberText.setText("Port Number");
             portNumberText.setStyle("-fx-text-fill: gray");
@@ -52,7 +52,7 @@ public class WelcomeScreenController extends Controller {
         }
     }
 
-    public void ConnectButtonAction(Event e) throws IOException {
+    public void connectButtonAction(Event e) throws IOException {
         System.out.println("Connect button clicked");
         String ipAddress = ipAddressText.getText();
         int portNumber = 5555;
