@@ -1,5 +1,6 @@
 package GUI.QuitScreen;
 
+import GUI.Controller;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class QuitScreenController {
+public class QuitScreenController extends Controller {
     @FXML private Button playAgainButton;
     @FXML private Button exitButton;
 
