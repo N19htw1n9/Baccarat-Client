@@ -14,7 +14,7 @@ public class GameScreenController extends Controller {
     @FXML private ToggleButton playerToggleButton;
     @FXML private ToggleButton bankerToggleButton;
 
-    public void MouseClickActionPB() {
+    public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
         playerBidText.setFont(Font.font("System", FontWeight.NORMAL, 16));
 
@@ -28,7 +28,7 @@ public class GameScreenController extends Controller {
             playerBidText.setText("");
     }
 
-    public void MouseExitActionPB() {
+    public void mouseExitActionPB() {
         if ((playerBidText.getText()).equals("")) {
             playerBidText.setText("Player Bid");
             playerBidText.setStyle("-fx-text-fill: gray");
