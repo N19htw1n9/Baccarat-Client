@@ -23,6 +23,7 @@ public class GameScreenController extends Controller {
     @FXML private ToggleButton playerToggleButton;
     @FXML private ToggleButton bankerToggleButton;
     @FXML private Button quitButton;
+    @FXML private Button roundStatsButton;
 
     public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
@@ -74,6 +75,16 @@ public class GameScreenController extends Controller {
         Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
         window.setScene(quitScene);
         window.setTitle("Quit game");
+        window.show();
+    }
+
+    public void roundStatsButtonAction(Event e) throws IOException {
+        Parent roundStatsScreen = FXMLLoader.load(getClass().getResource("../RoundStatsScreen/RoundStatsScreen.fxml"));
+        Scene roundStatsScene = new Scene(roundStatsScreen);
+
+        Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        window.setScene(roundStatsScene);
+        window.setTitle("Round stats");
         window.show();
     }
 }

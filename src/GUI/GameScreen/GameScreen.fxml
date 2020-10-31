@@ -12,7 +12,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="701.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: dimgray;" text="Round Stats" textFill="WHITE">
+      <Button fx:id="roundStatsButton" layoutX="701.0" layoutY="14.0" mnemonicParsing="false" onAction="#roundStatsButtonAction" style="-fx-background-color: dimgray;" text="Round Stats" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
