@@ -1,5 +1,6 @@
 package GUI.GameScreen;
 
+import Client.BaccaratInfo;
 import GUI.Controller;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -27,16 +28,11 @@ public class GameScreenController extends Controller {
     @FXML private HBox PlayerHBox;
     @FXML private Button quitButton;
     @FXML private Button roundStatsButton;
+    @FXML private Button startButton;
 
     public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
         playerBidText.setFont(Font.font("System", FontWeight.NORMAL, 16));
-
-        try {
-            System.out.println(this.connection.getPort());
-        } catch (Exception e) {
-            System.out.println("This print shouldn't be showing...");
-        }
 
         if ((playerBidText.getText()).equals("Player Bid"))
             playerBidText.setText("");
@@ -89,5 +85,22 @@ public class GameScreenController extends Controller {
         window.setScene(roundStatsScene);
         window.setTitle("Round stats");
         window.show();
+    }
+
+    public void startButtonAction(Event e) throws IOException, ClassNotFoundException {
+        int bid;
+        try {
+            bid = Integer.parseInt(playerBidText.getText());
+        } catch (Exception err) {
+            System.out.println("Bid value must be a number");
+            return;
+        }
+
+        String hand = "Player";
+        if (bankerToggleButton.isSelected())
+            hand = "Banker";
+
+        BaccaratInfo res = connection.send(bid, hand);
+        System.out.printf("\nServer responded with: %d and %s\n\n", res.bid, res.hand);
     }
 }
