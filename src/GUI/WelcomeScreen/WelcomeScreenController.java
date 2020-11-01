@@ -1,6 +1,7 @@
 package GUI.WelcomeScreen;
 
 import Client.ConnectionSocket;
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -64,7 +65,11 @@ public class WelcomeScreenController extends Controller {
             return;
         }
 
-        this.connection = new ConnectionSocket(ipAddress, portNumber);
+        connection = new ConnectionSocket(data -> {
+            Platform.runLater(() -> {
+                System.out.println(data);
+            });
+        }, ipAddress, portNumber);
 
         Parent gameScreen = FXMLLoader.load(getClass().getResource("../GameScreen/GameScreen.fxml"));
         Scene gameScene = new Scene(gameScreen);
