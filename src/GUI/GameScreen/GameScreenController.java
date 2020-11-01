@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -22,6 +23,8 @@ public class GameScreenController extends Controller {
     @FXML private TextField playerBidText;
     @FXML private ToggleButton playerToggleButton;
     @FXML private ToggleButton bankerToggleButton;
+    @FXML private HBox BankerHBox;
+    @FXML private HBox PlayerHBox;
     @FXML private Button quitButton;
     @FXML private Button roundStatsButton;
 

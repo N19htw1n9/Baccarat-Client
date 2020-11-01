@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -17,7 +19,26 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Pane layoutX="15.0" layoutY="117.0" prefHeight="200.0" prefWidth="771.0" />
+      <Pane layoutX="15.0" layoutY="117.0" prefHeight="200.0" prefWidth="771.0">
+         <children>
+            <HBox fx:id="BankerHBox" prefHeight="200.0" prefWidth="771.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Cards/CardBackBlue.jpg" />
+                     </image></ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Cards/CardBackBlue.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="275.0" right="10.0" top="20.0" />
+               </padding></HBox>
+         </children></Pane>
       <Pane layoutX="144.0" layoutY="46.0" prefHeight="71.0" prefWidth="512.0">
          <children>
             <Label layoutX="213.0" layoutY="17.0" text="Banker">
@@ -34,7 +55,25 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="15.0" layoutY="317.0" prefHeight="200.0" prefWidth="771.0" />
+      <Pane layoutX="15.0" layoutY="317.0" prefHeight="200.0" prefWidth="771.0">
+         <children>
+            <HBox fx:id="PlayerHBox" prefHeight="200.0" prefWidth="771.0" spacing="10.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Cards/CardBackRed.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Cards/CardBackRed.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="275.0" right="10.0" top="20.0" />
+               </padding></HBox>
+         </children></Pane>
       <Pane layoutX="15.0" layoutY="607.0" prefHeight="179.0" prefWidth="791.0">
          <children>
             <Label layoutX="14.0" layoutY="51.0" prefWidth="139.0" text="Winnings: ">
