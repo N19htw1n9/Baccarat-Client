@@ -17,11 +17,11 @@
         </Button>
         <TextField fx:id="portNumberText" layoutX="32.0" layoutY="174.0" prefHeight="26.0" prefWidth="383.0" promptText="Port Number">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="Calibri" size="14.0" />
          </font></TextField>
         <TextField fx:id="ipAddressText" layoutX="32.0" layoutY="134.0" prefHeight="26.0" prefWidth="383.0" promptText="IP Address">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="Calibri" size="14.0" />
          </font></TextField>
         <Label layoutX="94.0" layoutY="51.0" text="Welcome to Baccarat">
             <font>
