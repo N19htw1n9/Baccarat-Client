@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -29,6 +30,10 @@ public class GameScreenController extends Controller {
     @FXML private Button quitButton;
     @FXML private Button roundStatsButton;
     @FXML private Button startButton;
+    @FXML private Image banker1;
+    @FXML private Image banker2;
+    @FXML private Image player1;
+    @FXML private Image player2;
 
     public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
