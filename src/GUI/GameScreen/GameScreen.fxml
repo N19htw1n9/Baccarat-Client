@@ -23,11 +23,11 @@
          <children>
             <HBox fx:id="BankerHBox" prefHeight="200.0" prefWidth="771.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="bankerLeftCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Cards/CardBackBlue.jpg" />
                      </image></ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="bankerRightCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Cards/CardBackBlue.jpg" />
                      </image>
@@ -59,12 +59,12 @@
          <children>
             <HBox fx:id="PlayerHBox" prefHeight="200.0" prefWidth="771.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerLeftCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Cards/CardBackRed.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playerRightCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Cards/CardBackRed.jpg" />
                      </image>

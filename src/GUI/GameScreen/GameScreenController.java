@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -30,10 +31,10 @@ public class GameScreenController extends Controller {
     @FXML private Button quitButton;
     @FXML private Button roundStatsButton;
     @FXML private Button startButton;
-    @FXML private Image banker1;
-    @FXML private Image banker2;
-    @FXML private Image player1;
-    @FXML private Image player2;
+    @FXML private ImageView bankerLeftCard;
+    @FXML private ImageView bankerRightCard;
+    @FXML private ImageView playerLeftCard;
+    @FXML private ImageView playerRightCard;
 
     public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
@@ -110,8 +111,33 @@ public class GameScreenController extends Controller {
         BaccaratInfo res;
         try {
             connection.send(bid, hand);
-            System.out.println("Sent");
+            System.out.println("Data sent successfully!");
+            res = connection.recieve();
+            System.out.println("Banker hand: " + res.bankerHand);
+            System.out.println("Player hand: " + res.playerHand);
+            System.out.println("Winner: " + res.winner);
+
+            // Banker cards
+            String BLCPath = "./Cards/" + res.bankerHand.get(0) + ".jpg";
+            String BRCPath = "./Cards/" + res.bankerHand.get(1) + ".jpg";
+            Image BLCPic = new Image(getClass().getResource(BLCPath).toExternalForm());
+            Image BRCPic = new Image(getClass().getResource(BRCPath).toExternalForm());
+
+            // Player cards
+            String PLCPath = "./Cards/" + res.playerHand.get(0) + ".jpg";
+            String PRCPath = "./Cards/" + res.playerHand.get(1) + ".jpg";
+            Image PLCPic = new Image(getClass().getResource(PLCPath).toExternalForm());
+            Image PRCPic = new Image(getClass().getResource(PRCPath).toExternalForm());
+
+            // Change banker cards
+            this.bankerLeftCard.setImage(BLCPic);
+            this.bankerRightCard.setImage(BRCPic);
+
+            // Change player cards
+            this.playerLeftCard.setImage(PLCPic);
+            this.playerRightCard.setImage(PRCPic);
         } catch (Exception err) {
+            System.out.println(err);
             System.out.println("Something went wrong while trying to send the request to the server");
             return;
         }
