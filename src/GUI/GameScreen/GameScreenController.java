@@ -87,7 +87,7 @@ public class GameScreenController extends Controller {
         window.show();
     }
 
-    public void startButtonAction(Event e) throws IOException, ClassNotFoundException {
+    public void startButtonAction(Event e) {
         int bid;
         try {
             bid = Integer.parseInt(playerBidText.getText());
@@ -100,7 +100,15 @@ public class GameScreenController extends Controller {
         if (bankerToggleButton.isSelected())
             hand = "Banker";
 
-        BaccaratInfo res = connection.send(bid, hand);
-        System.out.printf("\nServer responded with: %d and %s\n\n", res.bid, res.hand);
+        System.out.printf("Bid: %d\nHand: %s\n\n", bid, hand);
+
+        BaccaratInfo res;
+        try {
+            connection.send(bid, hand);
+            System.out.println("Sent");
+        } catch (Exception err) {
+            System.out.println("Something went wrong while trying to send the request to the server");
+            return;
+        }
     }
 }
