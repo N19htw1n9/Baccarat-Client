@@ -102,6 +102,8 @@ public class GameScreenController extends Controller {
             connection.send(bid, hand);
             BaccaratInfo res = connection.recieve();
 
+            this.roundStatsList.add(res);
+
             // Change banker cards
             this.bankerLeftCard.setImage(this.imageFromCard(res.bankerHand.get(0)));
             this.bankerRightCard.setImage(this.imageFromCard(res.bankerHand.get(1)));
