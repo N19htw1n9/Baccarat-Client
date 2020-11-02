@@ -110,6 +110,5 @@
          </children></Pane>
       <Line endX="800.0" endY="626.0" startX="-5.7220458984375E-6" startY="626.0" strokeWidth="2.0" />
       <Line endX="800.0" endY="311.0" layoutX="10.0" layoutY="7.0" startX="-10.000005722045898" startY="311.0" stroke="GOLDENROD" strokeWidth="4.0" />
-      <BorderPane prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
