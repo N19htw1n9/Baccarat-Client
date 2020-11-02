@@ -37,7 +37,7 @@ public class ConnectionSocket extends Thread {
         System.out.printf("\nConnected to %s server on port %d\n", this.socket.getLocalSocketAddress().toString(), this.socket.getLocalPort());
     }
 
-    public void send(int bid, String hand) throws IOException, ClassNotFoundException {
+    public void send(double bid, String hand) throws IOException, ClassNotFoundException {
         BaccaratInfo req = new BaccaratInfo(bid, hand);
         out.writeObject(req);
     }

@@ -88,9 +88,9 @@ public class GameScreenController extends Controller {
     }
 
     public void startButtonAction(Event e) {
-        int bid;
+        double bid;
         try {
-            bid = Integer.parseInt(playerBidText.getText());
+            bid = Double.parseDouble(playerBidText.getText());
         } catch (Exception err) {
             System.out.println("Bid value must be a number");
             return;
@@ -100,7 +100,7 @@ public class GameScreenController extends Controller {
         if (bankerToggleButton.isSelected())
             hand = "Banker";
 
-        System.out.printf("Bid: %d\nHand: %s\n\n", bid, hand);
+        System.out.printf("Bid: %f\nHand: %s\n\n", bid, hand);
 
         BaccaratInfo res;
         try {
