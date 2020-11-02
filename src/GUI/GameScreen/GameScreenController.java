@@ -13,9 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,22 +37,6 @@ public class GameScreenController extends Controller {
     @FXML private Label winningsLabel;
 
     private double winningsCount = 0;
-
-    public void mouseClickActionPB() {
-        playerBidText.setStyle("-fx-text-fill: black");
-        playerBidText.setFont(Font.font("System", FontWeight.NORMAL, 16));
-
-        if ((playerBidText.getText()).equals("Player Bid"))
-            playerBidText.setText("");
-    }
-
-    public void mouseExitActionPB() {
-        if ((playerBidText.getText()).equals("")) {
-            playerBidText.setText("Player Bid");
-            playerBidText.setStyle("-fx-text-fill: gray");
-            playerBidText.setFont(Font.font("System Italic", FontPosture.ITALIC, 16));
-        }
-    }
 
     public void toggleButton() {
         group = new ToggleGroup();
