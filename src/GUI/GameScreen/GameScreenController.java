@@ -79,6 +79,12 @@ public class GameScreenController extends Controller {
         window.show();
     }
 
+    private Image imageFromCard(String card) {
+        String path = "./Cards/" + card + ".jpg";
+        Image image = new Image(getClass().getResource(path).toExternalForm());
+        return image;
+    }
+
     public void startButtonAction(Event e) {
         double bid;
         try {
@@ -89,41 +95,20 @@ public class GameScreenController extends Controller {
         }
 
         String hand = "Player";
-
         if (bankerToggleButton.isSelected())
             hand = "Banker";
 
-        System.out.printf("\n\nBid: %f\nHand: %s\n", bid, hand);
-
-        BaccaratInfo res;
         try {
             connection.send(bid, hand);
-            System.out.println("Response:");
-            res = connection.recieve();
-            System.out.println("Banker hand: " + res.bankerHand);
-            System.out.println("Player hand: " + res.playerHand);
-            System.out.println("Winner: " + res.winner);
-            System.out.println("Winnings: " + res.winnings);
-
-            // Banker cards
-            String BLCPath = "./Cards/" + res.bankerHand.get(0) + ".jpg";
-            String BRCPath = "./Cards/" + res.bankerHand.get(1) + ".jpg";
-            Image BLCPic = new Image(getClass().getResource(BLCPath).toExternalForm());
-            Image BRCPic = new Image(getClass().getResource(BRCPath).toExternalForm());
-
-            // Player cards
-            String PLCPath = "./Cards/" + res.playerHand.get(0) + ".jpg";
-            String PRCPath = "./Cards/" + res.playerHand.get(1) + ".jpg";
-            Image PLCPic = new Image(getClass().getResource(PLCPath).toExternalForm());
-            Image PRCPic = new Image(getClass().getResource(PRCPath).toExternalForm());
+            BaccaratInfo res = connection.recieve();
 
             // Change banker cards
-            this.bankerLeftCard.setImage(BLCPic);
-            this.bankerRightCard.setImage(BRCPic);
+            this.bankerLeftCard.setImage(this.imageFromCard(res.bankerHand.get(0)));
+            this.bankerRightCard.setImage(this.imageFromCard(res.bankerHand.get(1)));
 
             // Change player cards
-            this.playerLeftCard.setImage(PLCPic);
-            this.playerRightCard.setImage(PRCPic);
+            this.playerLeftCard.setImage(this.imageFromCard(res.playerHand.get(0)));
+            this.playerRightCard.setImage(this.imageFromCard(res.playerHand.get(1)));
 
             // Display total winnings
             winningsCount += res.winnings;
@@ -152,7 +137,6 @@ public class GameScreenController extends Controller {
             }
 
         } catch (Exception err) {
-            System.out.println(err);
             System.out.println("Something went wrong while trying to send the request to the server");
             return;
         }
