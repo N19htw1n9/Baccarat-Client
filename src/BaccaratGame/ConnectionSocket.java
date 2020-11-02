@@ -42,6 +42,10 @@ public class ConnectionSocket extends Thread {
         out.writeObject(req);
     }
 
+    public BaccaratInfo recieve() throws IOException, ClassNotFoundException {
+        return (BaccaratInfo) in.readObject();
+    }
+
     public Socket getSocket() {
         return socket;
     }
