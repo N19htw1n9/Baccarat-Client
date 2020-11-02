@@ -12,18 +12,18 @@
                 <Insets />
             </opaqueInsets>
             <font>
-                <Font name="System Bold" size="12.0" />
+                <Font name="System Bold" size="14.0" />
             </font>
         </Button>
         <TextField fx:id="portNumberText" layoutX="32.0" layoutY="174.0" onKeyTyped="#mouseClickActionPN" onMouseClicked="#mouseClickActionPN" onMouseExited="#mouseExitActionPN" onMouseReleased="#mouseExitActionPN" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="Port Number">
          <font>
-            <Font name="System Italic" size="12.0" />
+            <Font name="System Italic" size="14.0" />
          </font></TextField>
-        <TextField fx:id="ipAddressText" layoutX="32.0" layoutY="136.0" onKeyTyped="#mouseClickActionIP" onMouseClicked="#mouseClickActionIP" onMouseExited="#mouseExitActionIP" onMouseReleased="#mouseExitActionIP" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="IP Address">
+        <TextField fx:id="ipAddressText" layoutX="32.0" layoutY="134.0" onKeyTyped="#mouseClickActionIP" onMouseClicked="#mouseClickActionIP" onMouseExited="#mouseExitActionIP" onMouseReleased="#mouseExitActionIP" prefHeight="26.0" prefWidth="383.0" style="-fx-text-fill: gray;" text="IP Address">
          <font>
-            <Font name="System Italic" size="12.0" />
+            <Font name="System Italic" size="14.0" />
          </font></TextField>
-        <Label layoutX="105.0" layoutY="52.0" text="Welcome to Baccarat">
+        <Label layoutX="94.0" layoutY="51.0" text="Welcome to Baccarat">
             <font>
                 <Font name="System Bold" size="26.0" />
             </font>

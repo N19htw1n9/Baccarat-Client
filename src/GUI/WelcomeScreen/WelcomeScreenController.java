@@ -23,7 +23,7 @@ public class WelcomeScreenController extends Controller {
 
     public void mouseClickActionIP() {
         ipAddressText.setStyle("-fx-text-fill: black");
-        ipAddressText.setFont(Font.font("System", FontWeight.NORMAL, 12));
+        ipAddressText.setFont(Font.font("System", FontWeight.NORMAL, 14));
 
         if ((ipAddressText.getText()).equals("IP Address"))
             ipAddressText.setText("");
@@ -33,13 +33,13 @@ public class WelcomeScreenController extends Controller {
         if ((ipAddressText.getText()).equals("")) {
             ipAddressText.setText("IP Address");
             ipAddressText.setStyle("-fx-text-fill: gray");
-            ipAddressText.setFont(Font.font("System Italic", FontPosture.ITALIC, 12));
+            ipAddressText.setFont(Font.font("System Italic", FontPosture.ITALIC, 14));
         }
     }
 
     public void mouseClickActionPN() {
         portNumberText.setStyle("-fx-text-fill: black");
-        portNumberText.setFont(Font.font("System", FontWeight.NORMAL, 12));
+        portNumberText.setFont(Font.font("System", FontWeight.NORMAL, 14));
 
         if ((portNumberText.getText()).equals("Port Number"))
             portNumberText.setText("");
@@ -49,7 +49,7 @@ public class WelcomeScreenController extends Controller {
         if ((portNumberText.getText()).equals("")) {
             portNumberText.setText("Port Number");
             portNumberText.setStyle("-fx-text-fill: gray");
-            portNumberText.setFont(Font.font("System Italic", FontPosture.ITALIC, 12));
+            portNumberText.setFont(Font.font("System Italic", FontPosture.ITALIC, 14));
         }
     }
 

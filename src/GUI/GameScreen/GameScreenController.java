@@ -8,13 +8,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -35,6 +33,13 @@ public class GameScreenController extends Controller {
     @FXML private ImageView bankerRightCard;
     @FXML private ImageView playerLeftCard;
     @FXML private ImageView playerRightCard;
+    @FXML private Pane bankerPane;
+    @FXML private Pane playerPane;
+    @FXML private Label bankerWinLabel;
+    @FXML private Label playerWinLabel;
+    @FXML private Label winningsLabel;
+
+    private double winningsCount = 0;
 
     public void mouseClickActionPB() {
         playerBidText.setStyle("-fx-text-fill: black");
@@ -103,6 +108,7 @@ public class GameScreenController extends Controller {
         }
 
         String hand = "Player";
+
         if (bankerToggleButton.isSelected())
             hand = "Banker";
 
@@ -137,6 +143,38 @@ public class GameScreenController extends Controller {
             // Change player cards
             this.playerLeftCard.setImage(PLCPic);
             this.playerRightCard.setImage(PRCPic);
+
+            if(res.winner.equals("Banker"))
+            {
+                bankerWinLabel.setText("Banker won!");
+                bankerWinLabel.setStyle("-fx-color: #60b31d");
+                playerWinLabel.setText("");
+                bankerPane.setStyle("-fx-border-color: #60b31d; -fx-border-width: 7px");
+                playerPane.setStyle("-fx-border-color: transparent");
+            }
+
+            else if(res.winner.equals("Player"))
+            {
+                playerWinLabel.setText("Player won!");
+                playerWinLabel.setStyle("-fx-color: #60b31d");
+                bankerWinLabel.setText("");
+                playerPane.setStyle("-fx-border-color: #60b31d; -fx-border-width: 7px");
+                bankerPane.setStyle("-fx-border-color: transparent");
+
+                winningsCount += res.bid;
+                winningsLabel.setText("Winnings: $"+winningsCount);
+            }
+
+            else
+            {
+                playerWinLabel.setText("It's a Draw!");
+                playerWinLabel.setStyle("-fx-text-fill: #daa520");
+                bankerWinLabel.setText("It's a Draw!");
+                bankerWinLabel.setStyle("-fx-text-fill: #daa520");
+                bankerPane.setStyle("-fx-border-color: #daa520; -fx-border-width: 5px");
+                playerPane.setStyle("-fx-border-color: #daa520; -fx-border-width: 5px");
+            }
+
         } catch (Exception err) {
             System.out.println(err);
             System.out.println("Something went wrong while trying to send the request to the server");
