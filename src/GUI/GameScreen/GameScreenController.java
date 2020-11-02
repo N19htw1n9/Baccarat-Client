@@ -1,6 +1,6 @@
 package GUI.GameScreen;
 
-import Client.BaccaratInfo;
+import BaccaratGame.BaccaratInfo;
 import GUI.Controller;
 import javafx.event.Event;
 import javafx.fxml.FXML;

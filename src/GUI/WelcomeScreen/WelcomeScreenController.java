@@ -1,6 +1,6 @@
 package GUI.WelcomeScreen;
 
-import Client.ConnectionSocket;
+import BaccaratGame.ConnectionSocket;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;

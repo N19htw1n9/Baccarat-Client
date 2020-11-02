@@ -1,7 +1,7 @@
 package GUI;
 
 import javafx.scene.control.ToggleGroup;
-import Client.ConnectionSocket;
+import BaccaratGame.ConnectionSocket;
 
 public class Controller {
     protected ToggleGroup group;
