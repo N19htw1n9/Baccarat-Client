@@ -106,16 +106,17 @@ public class GameScreenController extends Controller {
         if (bankerToggleButton.isSelected())
             hand = "Banker";
 
-        System.out.printf("Bid: %f\nHand: %s\n\n", bid, hand);
+        System.out.printf("\n\nBid: %f\nHand: %s\n", bid, hand);
 
         BaccaratInfo res;
         try {
             connection.send(bid, hand);
-            System.out.println("Data sent successfully!");
+            System.out.println("Response:");
             res = connection.recieve();
             System.out.println("Banker hand: " + res.bankerHand);
             System.out.println("Player hand: " + res.playerHand);
             System.out.println("Winner: " + res.winner);
+            System.out.println("Winnings: " + res.winnings);
 
             // Banker cards
             String BLCPath = "./Cards/" + res.bankerHand.get(0) + ".jpg";
