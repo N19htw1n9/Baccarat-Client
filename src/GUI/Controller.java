@@ -9,5 +9,5 @@ import java.util.ArrayList;
 public class Controller {
     protected ToggleGroup group;
     protected static ConnectionSocket connection;
-    protected ArrayList<BaccaratInfo> roundStatsList = new ArrayList<>();
+    protected static ArrayList<BaccaratInfo> roundStatsList = new ArrayList<>();
 }
