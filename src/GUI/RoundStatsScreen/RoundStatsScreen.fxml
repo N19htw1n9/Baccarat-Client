@@ -6,26 +6,15 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.RoundStatsScreen.RoundStatsScreenController"> <!--DEFINE THE FX CONTROLLER BEFORE RUNNING-->
     <children>
+      <Button fx:id="generateStats" layoutX="12.0" layoutY="62.0" mnemonicParsing="false" onAction="#buildRoundInfoBox" prefHeight="30.0" prefWidth="129.0" style="-fx-background-color: Green;" text="Generate Stats" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
         <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" style="-fx-background-color: Crimson;" text="Back" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Label layoutX="150.0" layoutY="52.0" text="Round Stats">
-            <font>
-                <Font name="System Bold" size="26.0" />
-            </font>
-        </Label>
-      <ChoiceBox layoutX="149.0" layoutY="153.0" prefHeight="32.0" prefWidth="150.0" />
-      <Label layoutX="55.0" layoutY="216.0" text="Round # Stats:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="55.0" layoutY="237.0" text="Wins:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
+      <ListView fx:id="roundStatsPane" layoutX="12.0" layoutY="108.0" prefHeight="377.0" prefWidth="426.0" style="-fx-border-color: transparent;" />
     </children>
 </AnchorPane>
