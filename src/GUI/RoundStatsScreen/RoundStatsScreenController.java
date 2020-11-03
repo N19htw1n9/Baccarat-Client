@@ -32,6 +32,7 @@ public class RoundStatsScreenController extends Controller {
     }
 
     public void buildRoundInfoBox() {
+        this.roundStatsPane.getItems().clear();
         for (int i = 0; i < this.roundStatsList.size(); i++) {
             this.roundStatsPane.getItems().add(this.getRoundInfo(this.roundStatsList.get(i), i+1));
         }
