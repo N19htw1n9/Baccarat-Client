@@ -16,6 +16,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class GameScreenController extends Controller {
     @FXML private TextField playerBidText;
@@ -85,6 +87,14 @@ public class GameScreenController extends Controller {
         return image;
     }
 
+    private static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = BigDecimal.valueOf(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
+
     public void startButtonAction(Event e) {
         double bid;
         try {
@@ -101,6 +111,8 @@ public class GameScreenController extends Controller {
         try {
             connection.send(bid, hand);
             BaccaratInfo res = connection.recieve();
+            res.winnings = round(res.winnings, 2);
+            res.bid = round(res.bid, 2);
 
             this.roundStatsList.add(res);
 
