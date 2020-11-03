@@ -77,7 +77,9 @@ public class GameScreenController extends Controller {
         Parent roundStatsScreen = FXMLLoader.load(getClass().getResource("../RoundStatsScreen/RoundStatsScreen.fxml"));
         Scene roundStatsScene = new Scene(roundStatsScreen);
 
-        Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        Scene currentScene = ((Node)e.getSource()).getScene();
+        this.gameSceneState = currentScene;
+        Stage window = (Stage) currentScene.getWindow();
         window.setScene(roundStatsScene);
         window.setTitle("Round stats");
         window.show();

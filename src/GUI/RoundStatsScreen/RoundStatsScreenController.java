@@ -22,11 +22,8 @@ public class RoundStatsScreenController extends Controller {
     @FXML private ListView roundStatsPane;
 
     public void backButtonAction(Event e) throws IOException {
-        Parent gameScreen = FXMLLoader.load(getClass().getResource("../GameScreen/GameScreen.fxml"));
-        Scene gameScene = new Scene(gameScreen);
-
         Stage window = (Stage) ((Node)e.getSource()).getScene().getWindow();
-        window.setScene(gameScene);
+        window.setScene(this.gameSceneState);
         window.setTitle("Play game");
         window.show();
     }
