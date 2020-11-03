@@ -50,9 +50,9 @@ public class RoundStatsScreenController extends Controller {
         VBox displayRoundInfo = new VBox(
                     new Text("Round: " + round),
                     new HBox(10, this.getInfoText("Hand:"), new Text(hand)),
-                    new HBox(10, this.getInfoText("Bid placed:"), new Text("$" + bid)),
+                    new HBox(10, this.getInfoText("Bid placed:"), new Text(String.format("$%.2f", bid))),
                     new HBox(10, this.getInfoText("Winner:"), new Text(winner)),
-                    new HBox(10, this.getInfoText("Winnings:"), new Text("$" + winnings))
+                    new HBox(10, this.getInfoText("Winnings:"), new Text(String.format("$%.2f", winnings)))
                 );
         return displayRoundInfo;
     }
