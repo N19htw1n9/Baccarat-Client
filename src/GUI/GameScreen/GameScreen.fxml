@@ -34,6 +34,11 @@
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></ImageView>
+                  <ImageView fx:id="bankerExtraCard" fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" style="visibility: hidden;">
+                     <image>
+                        <Image url="@Cards/CardBackBlue.jpg" />
+                     </image>
+                  </ImageView>
                </children>
                <padding>
                   <Insets bottom="10.0" left="275.0" right="10.0" top="20.0" />
@@ -69,6 +74,11 @@
                      </image>
                   </ImageView>
                   <ImageView fx:id="playerRightCard" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Cards/CardBackRed.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="playerExtraCard" fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" style="visibility: hidden;">
                      <image>
                         <Image url="@Cards/CardBackRed.jpg" />
                      </image>

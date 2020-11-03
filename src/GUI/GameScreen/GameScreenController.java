@@ -30,8 +30,10 @@ public class GameScreenController extends Controller {
     @FXML private Button startButton;
     @FXML private ImageView bankerLeftCard;
     @FXML private ImageView bankerRightCard;
+    @FXML private ImageView bankerExtraCard;
     @FXML private ImageView playerLeftCard;
     @FXML private ImageView playerRightCard;
+    @FXML private ImageView playerExtraCard;
     @FXML private Pane bankerPane;
     @FXML private Pane playerPane;
     @FXML private Label bankerWinLabel;
@@ -96,6 +98,10 @@ public class GameScreenController extends Controller {
     }
 
     public void startButtonAction(Event e) {
+        // Hide extra cards
+        this.bankerExtraCard.setStyle("visibility: hidden;");
+        this.playerExtraCard.setStyle("visibility: hidden;");
+
         double bid;
         try {
             bid = Double.parseDouble(playerBidText.getText());
@@ -123,6 +129,18 @@ public class GameScreenController extends Controller {
             // Change player cards
             this.playerLeftCard.setImage(this.imageFromCard(res.playerHand.get(0)));
             this.playerRightCard.setImage(this.imageFromCard(res.playerHand.get(1)));
+
+            // Show extra banker card
+            if (res.bankerHand.size() == 3) {
+                this.bankerExtraCard.setStyle("visibility: none;");
+                this.bankerExtraCard.setImage(this.imageFromCard(res.bankerHand.get(2)));
+            }
+
+            // Show extra player card
+            if (res.playerHand.size() == 3) {
+                this.playerExtraCard.setStyle("visibility: none;");
+                this.playerExtraCard.setImage(this.imageFromCard(res.playerHand.get(2)));
+            }
 
             // Display total winnings
             winningsCount += res.winnings;
