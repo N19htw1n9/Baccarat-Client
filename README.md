@@ -1,4 +1,4 @@
-# Baccarat Client Program
+# Baccarat Client Application
 
 _(Note: This application was designed using Java 8, Apache Maven JavaFX 12, SceneBuilder, and JUnit 4)_
 
