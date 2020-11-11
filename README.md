@@ -1,6 +1,8 @@
 # Baccarat Client Program
 
-This program s _(Note: The program escapes all whitespaces and `$` signs)_
+_(Note: This application was designed using Java 8, Apache Maven JavaFX 12, SceneBuilder, and JUnit 4)_
+
+This program s 
 
 ## Usage
 
