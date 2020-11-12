@@ -8,7 +8,7 @@ _(Note: This application was designed using Java 8, Apache Maven, Java Sockets, 
 
 For a detailed diagram of all action events in the GUI, see [Baccarat Client Wireframe](https://github.com/N19htw1n9/Baccarat-Client/blob/main/BaccarantClientWireframe.pdf)
 
-For instructions on how the game is played, see [Baccarat Rules and Playing Guide](https://github.com/N19htw1n9/Baccarat-Client/blob/main/BaccaratGuide.pdf)
+For instructions on how the game is played, see [Baccarat Guide](https://github.com/N19htw1n9/Baccarat-Client/blob/main/BaccaratGuide.pdf)
 
 Once you are running the application and see the Welcome Screen, enter the IP Address of the machine you are running [baccarat-server](https://github.com/N19htw1n9/Baccarat-Server) on and enter `5555` (which was defined by the server program) in the Port Number field. If you are running the server program on the same machine as the client server, you may simply enter `127.0.0.1` or `localhost`
 
