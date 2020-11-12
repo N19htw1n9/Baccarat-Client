@@ -1,6 +1,6 @@
-# Baccarat Client Application
+# Baccarat Client-Server Application: The Client
 
-_(Note: This application was designed using Java 8, Apache Maven JavaFX 12, SceneBuilder, and JUnit 4)_
+_(Note: This application was designed using Java 8, Apache Maven, JavaFX 12, SceneBuilder, and JUnit 4)_
 
 This program s 
 
