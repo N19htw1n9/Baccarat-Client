@@ -1,8 +1,8 @@
-# Baccarat Client-Server Application: The Client
+# Baccarat Client-Server Game: The Client Application
+
+This application is one component of the overall Baccarat Client-Server game project. The client application connects to a server application [baccarat-client](https://github.com/N19htw1n9/Baccarat-Server) using the server's IP Address and a unique port number specified by the client. The game components are located in the server
 
 _(Note: This application was designed using Java 8, Apache Maven, Java Sockets, JavaFX 12, SceneBuilder, and JUnit 4)_
-
-This program s 
 
 ## Usage
 
