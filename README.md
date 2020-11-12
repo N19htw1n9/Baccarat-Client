@@ -6,7 +6,7 @@ _(Note: This application was designed using Java 8, Apache Maven, Java Sockets, 
 
 ## Usage
 
-For a detailed diagram of all action events in the GUI, see [Baccarat Client Wireframe](../blob/main/BaccaratClientWireframe.pdf)
+For a detailed diagram of all action events in the GUI, see [Baccarat Client Wireframe](../main/BaccaratClientWireframe.pdf)
 
 For instructions on how the game is played, see the instructions pdf
 
